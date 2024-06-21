@@ -1,0 +1,417 @@
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* Deklarasi untuk global style */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --bg-color-first: #1e202f;
+  --bg-color-second: #292a3e;
+  --bg-color-third: #3bc59a;
+  --bg-color-fourth: #cbee06;
+
+  --text-color-first: #0a0a0a;
+  --text-color-second: #3d3c3c;
+  --text-color-third: #3bc59a;
+  --text-color-fourth: #cbee06;
+
+  --hover-text-color: #fff;
+
+  --more-and-less: #555;
+
+  /* Darkmode */
+  --bg-main: #1e202f;
+  --bg-card: #292a3e;
+  --bg-btn-bfr: #a236d0;
+  --bg-btn-aft: #7b13a7;
+  --text-color: #d1d1d1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100%;
+  background-color: #1e202f;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-card);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  margin: 0 24px;
+}
+
+.logo .menu-icon {
+  color: #aaaaaa;
+  font-size: 24px;
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+.logo .logo-name {
+  color: yellow;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+nav .sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 260px;
+  padding: 20px 0;
+  background-color: var(--bg-card);
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+nav.open .sidebar {
+  left: 0;
+}
+
+.sidebar .sidebar-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 16px;
+}
+
+.sidebar-content .list {
+  list-style: none;
+}
+
+.list .nav-link {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 14px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.lists .nav-link:hover {
+  background-color: var(--bg-btn-bfr);
+}
+
+.nav-link .icon {
+  margin-right: 14px;
+  font-size: 20px;
+  color: #9b9b9b;
+}
+
+.nav-link .link {
+  font-size: 16px;
+  color: #9b9b9b;
+  font-weight: 400;
+}
+
+.lists .nav-link:hover .icon,
+.lists .nav-link:hover .link {
+  color: #fff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 1000vh;
+  width: 200%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+nav.open ~ .overlay {
+  opacity: 1;
+  left: 260px;
+  pointer-events: auto;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  margin-top: 70px;
+}
+
+.main--container {
+  position: absolute;
+  margin-top: 70px;
+  top: 0;
+  right: 0;
+  height: 700px;
+  width: 100%;
+  padding: 30px;
+  background-color: var(--bg-main);
+}
+
+.visualisasi {
+  width: auto;
+  height: 1000px;
+  background: var(--bg-color-first);
+}
+
+.hero .main--container {
+  top: 0;
+  margin-top: 70px;
+  height: 100%;
+  right: 150px;
+  width: auto;
+  padding: 30px;
+}
+
+.section--title {
+  display: flex;
+  margin-left: 120px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+/* cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cards span {
+  color: #f8f4e1;
+}
+
+.card--value {
+  color: #f8f4e1;
+}
+
+.card {
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1 1 calc(33.333% - 1rem);
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card .card--title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.card--value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  flex: 1 1 100%;
+  margin-bottom: 0.8rem;
+}
+
+.filter span {
+  margin-right: 0.5rem;
+  color: #f0eaea;
+}
+
+.filter select {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #f8f4e1;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+
+  .filter {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
+
+.card-1,
+.card-2,
+.card-3 {
+  background: var(--bg-card);
+  box-shadow: 5.41116px 18.2132px 41px rgba(0, 0, 0, 0.12),
+    3.18609px 10.7239px 21.3856px rgba(0, 0, 0, 0.086784),
+    1.63633px 5.50766px 10.0368px rgba(0, 0, 0, 0.067392),
+    0.657997px 2.21472px 4.3952px rgba(0, 0, 0, 0.052608),
+    0.147183px 0.495398px 1.9024px rgba(0, 0, 0, 0.033216);
+}
+
+/* visualisasi baris 1 */
+/* CSS untuk membuat visualisasi data responsif */
+.cards2 {
+  border-radius: 25px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  background: var(--bg-card);
+}
+
+.chart {
+  flex: 1 1 30%;
+  max-width: 100%;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.chart canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 200px;
+}
+
+@media (max-width: 768px) {
+  .chart {
+    max-width: 100%;
+    flex: 1 1 100%;
+    margin: 5px;
+  }
+}
+
+.section--title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+/* DATA TABLE */
+.section-table {
+  width: 100%;
+  padding: 2%;
+  padding-top: 100px;
+  background-color: #292a3e;
+}
+.table-data {
+  width: 100%;
+  background-color: #c0ff00;
+  padding: 20px;
+  padding-top: 20px;
+  border-radius: 10px;
+  align-items: center;
+}
+@media screen and (max-width: 70px) {
+  .table-data {
+    max-width: 100%;
+    flex: 1 1 100%;
+    margin: 5px;
+  }
+}
+
+/* Clear floats after the columns */
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/* Footer styles */
+.footer {
+  background-color: var(--bg-main);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.footer-item {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.footer-item h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.footer-item p {
+  line-height: 1.6;
+  font-size: 12px;
+}
+
+.footer-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-item li {
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.footer-item a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-item a:hover {
+  color: var(--hover-text-color);
+}
+
+@media (max-width: 768px) {
+  .footer-item {
+    flex: 100%;
+  }
+}
